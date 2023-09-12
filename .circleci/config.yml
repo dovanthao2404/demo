@@ -89,20 +89,20 @@ jobs:
           command: |
             sh ./command/upload_docker.sh
 
-  eks-deploy:
-    docker:
-      - image: "cimg/python:3.10"
-    steps:
-      - checkout
-      - aws-cli/setup
-      - aws-eks/create-cluster:
-          cluster-name: ourmemoryapp
-          nodegroup-name: ourmemoryapp-nodes
-          node-type: t3.medium
-          nodes-min: 2
-          nodes-max: 3
-      - destroy-environment:
-          cluster_name: ourmemoryapp
+  # eks-deploy:
+  #   docker:
+  #     - image: "cimg/python:3.10"
+  #   steps:
+  #     - checkout
+  #     - aws-cli/setup
+  #     - aws-eks/create-cluster:
+  #         cluster-name: ourmemoryapp
+  #         nodegroup-name: ourmemoryapp-nodes
+  #         node-type: t3.medium
+  #         nodes-min: 2
+  #         nodes-max: 3
+  #     - destroy-environment:
+  #         cluster_name: ourmemoryapp
 
   run-app-deploy:
     docker:
@@ -163,7 +163,7 @@ workflows:
           # filters:
           #   branches:
           #     only: [main]
-      - eks-deploy:
-          requires: [build-and-upload-docker]
-      - run-app-deploy:
-          requires: [eks-deploy]
+      # - eks-deploy:
+      #     requires: [build-and-upload-docker]
+      - run-app-deploy
+          # requires: [eks-deploy]
