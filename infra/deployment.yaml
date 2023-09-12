@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ourmemoryapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ourmemoryapp
+  template:
+    metadata:
+      labels:
+        app: ourmemoryapp
+    spec:
+      containers:
+      - name: ourmemoryapp
+        image: sergionguyen12397/ourmemoryapp
+        ports:
+        - containerPort: 80
