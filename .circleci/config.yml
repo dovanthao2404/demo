@@ -160,9 +160,9 @@ workflows:
       - setup-environment
       - build-and-upload-docker:
           requires: [setup-environment]
-          filters:
-            branches:
-              only: [main]
+          # filters:
+          #   branches:
+          #     only: [main]
       - eks-deploy:
           requires: [build-and-upload-docker]
       - run-app-deploy:
