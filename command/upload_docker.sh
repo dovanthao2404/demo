@@ -5,11 +5,11 @@
 
 # Step 1:
 # Create dockerpath
-dockerpath=sergionguyen12397/ourmemoryapp
+dockerpath=dovanthao2404/ourmemoryapp
 
 # Step 2:  
 # Authenticate & tag
-docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 echo "Docker ID and Image: $dockerpath"
 docker image tag ourmemoryapp $dockerpath:latest
 
