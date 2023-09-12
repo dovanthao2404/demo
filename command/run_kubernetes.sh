@@ -4,7 +4,7 @@
 
 # Step 1:
 # This is your Docker ID/path
-dockerpath=sergionguyen12397/ourmemoryapp
+dockerpath=dovanthao2404/ourmemoryapp
 
 # Step 2
 # Run the Docker Hub container with kubernetes
